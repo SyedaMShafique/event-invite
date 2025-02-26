@@ -3,27 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Invitation</title>
+    <title>Hadi’s 6th Dinosaur Eid Party! 🦖🌙✨</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: #f4f4f4; padding: 20px; border-radius: 10px; }
-        h1 { color: #333; }
-        p { font-size: 18px; }
-        .rsvp-button { 
-            display: inline-block; padding: 10px 20px; margin-top: 20px;
-            background-color: #008CBA; color: white; text-decoration: none; font-size: 18px; border-radius: 5px;
+        /* Starry Night Background */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0b3d91;
+            background-image: url('https://i.imgur.com/xVE9y0W.png'); /* Star background */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Stars Animation */
+        @keyframes twinkling {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            opacity: 0.5;
+            animation: twinkling 2s infinite ease-in-out alternate;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #f4d03f; /* Golden Eid color */
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .theme-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .rsvp-button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ddd;
         }
     </style>
 </head>
 <body>
+    <!-- Twinkling Stars -->
+    <script>
+        function createStars() {
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.classList.add("star");
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                document.body.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+
     <div class="container">
-        <h1>You're Invited!</h1>
-        <p>Join us for our special event!</p>
-        <p><strong>Date:</strong> March 15, 2025</p>
-        <p><strong>Time:</strong> 6:00 PM - 9:00 PM</p>
-        <p><strong>Location:</strong> 123 Celebration Street, City, Country</p>
-        <p>Please RSVP using the link below:</p>
-        <a class="rsvp-button" href="https://forms.gle/xNMJDoyeBC55iKDeA" target="_blank">RSVP Now</a>
+        <img class="theme-img" src="https://i.imgur.com/dINq9Qe.jpeg" alt="Eid Party with Dinosaurs">
+        
+        <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
+        <p><strong>When:</strong> April 10, 2025, at 6:00 PM</p>
+        <p><strong>Where:</strong> 123 Dino Park, Celebration City</p>
+        <p>Get ready for a **roaring** Eid celebration as we celebrate Hadi’s **6th birthday** with dinosaurs, delicious food, and lots of fun! 🎂🦕</p>
+        <p>Come dressed for adventure and enjoy **dinosaur games, an Eid feast, and a special birthday surprise!** 🎉</p>
+
+        <a class="rsvp-button" href="YOUR_GOOGLE_FORM_LINK" target="_blank">RSVP Now</a>
+
+        <p class="footer">We can’t wait to celebrate with you! 🏮🦖</p>
     </div>
 </body>
 </html>
