@@ -32,18 +32,18 @@
         .left, .right {
             display: flex;
             flex-direction: column;
-            width: 35%; /* Keeps images balanced on larger screens */
+            width: 35%;
             height: 100vh;
         }
 
         /* Ensuring Full Images Display */
         .image-box {
             flex: 1;
-            background-size: contain; /* Ensures full image visibility */
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             width: 100%;
-            height: 50%;
+            height: 50vh; /* Ensures images keep their height */
         }
 
         /* Assign Your Specific Images */
@@ -65,9 +65,9 @@
 
         /* Center RSVP Section */
         .rsvp-section {
-            width: 30%; /* Center section slightly smaller for balance */
+            width: 30%;
             min-height: 100%;
-            background: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
+            background: rgba(0, 0, 0, 0.85);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -109,7 +109,8 @@
 
             .image-box {
                 width: 50%;
-                height: 30vh;
+                height: auto;
+                min-height: 20vh;
                 background-size: contain;
             }
 
