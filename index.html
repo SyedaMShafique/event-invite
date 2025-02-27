@@ -12,33 +12,31 @@
             margin: 0;
             padding: 0;
             color: white;
-            background-color: #f8f8f8;
-        }
-
-        /* Image Container */
-        .images-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .image-box {
-            width: 45%;
-            max-width: 400px;
-            height: auto;
+            min-height: 100vh;
+            background: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'), 
+                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png'),
+                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png'),
+                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
+            background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+            background-position: top left, top right, bottom left, bottom right;
+            background-repeat: no-repeat;
         }
 
         /* Center RSVP Section */
         .rsvp-section {
             width: 80%;
-            max-width: 800px;
-            background: rgba(0, 0, 0, 0.9);
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.85);
             padding: 40px;
             border-radius: 10px;
-            margin: 20px auto;
             text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         /* RSVP Button */
@@ -59,16 +57,11 @@
             background-color: #218838;
         }
 
-        /* Mobile-Friendly Adjustments */
+        /* 📱 Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
-            .images-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .image-box {
-                width: 90%;
-                max-width: 300px;
+            body {
+                background-size: cover;
+                background-position: center;
             }
 
             .rsvp-section {
@@ -80,12 +73,6 @@
 </head>
 <body>
 
-    <!-- Top Images -->
-    <div class="images-container">
-        <img class="image-box" src="https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png" alt="Dinosaur Eid Party">
-        <img class="image-box" src="https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png" alt="Dinosaur Eid Celebration">
-    </div>
-
     <!-- RSVP Section -->
     <div class="rsvp-section">
         <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
@@ -94,12 +81,6 @@
         <p>Get ready for a <strong>roaring</strong> Eid celebration as we celebrate Hadi’s <strong>6th birthday</strong> with dinosaurs, delicious food, and lots of fun! 🎂🦕</p>
         <p>Come dressed for adventure and enjoy <strong>Eid games, a dinosaur feast, and a special birthday surprise!</strong> 🎉</p>
         <a class="rsvp-button" href="https://forms.gle/sXqc4UnPVuh7WNph8" target="_blank">RSVP Now</a>
-    </div>
-
-    <!-- Bottom Images -->
-    <div class="images-container">
-        <img class="image-box" src="https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png" alt="Dinosaur Eid Celebration">
-        <img class="image-box" src="https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png" alt="Dinosaur Eid Party">
     </div>
 
 </body>
