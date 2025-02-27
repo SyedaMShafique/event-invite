@@ -5,42 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hadi’s 6th Dinosaur Eid Party! 🦖🌙✨</title>
     <style>
-        /* Background Image */
+        /* Page Layout */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-attachment: fixed;
             margin: 0;
             padding: 0;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Centered Container with Darker Background */
-        .container {
-            max-width: 90%;
-            width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
-            border-radius: 15px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* Container for Split Layout */
+        .split-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
         }
 
-        /* Heading Style */
-        h1 {
-            color: #ffcc00;
-            font-size: 26px;
-            margin-bottom: 10px;
+        /* Left and Right Image Halves */
+        .left-half, .right-half, .rsvp-section {
+            height: 100%;
+            background-size: contain; /* Ensures full image is visible */
+            background-repeat: no-repeat;
+            background-position: center;
+            flex: 1; /* Equal flexibility */
         }
 
-        /* Paragraph Styling */
-        p {
-            font-size: 18px;
-            line-height: 1.5;
+        /* Set the same image on both sides */
+        .left-half {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
+        }
+
+        .right-half {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
+        }
+
+        /* Center RSVP Section */
+        .rsvp-section {
+            flex: 1.2; /* Slightly bigger than side images */
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px;
         }
 
         /* RSVP Button */
@@ -61,57 +74,41 @@
             background-color: #218838;
         }
 
-        /* Footer Text */
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #ddd;
-        }
-
-        /* Responsive Design for Mobile */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body {
+            .split-container {
+                flex-direction: column;
+            }
+
+            .left-half, .right-half {
+                width: 100%;
+                height: 30vh;
                 background-size: cover;
             }
 
-            .container {
-                max-width: 90%;
-                padding: 15px;
-                margin: 20px auto;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .rsvp-button {
-                font-size: 16px;
-                padding: 10px 20px;
+            .rsvp-section {
+                width: 90%;
+                height: auto;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
-        <p><strong>When:</strong> April 12, 2025, at 1:00 PM</p>
-        <p><strong>Where:</strong> 22944 Rose Quartz Sq, Brambleton VA 20148</p>
-        <p>
-            Get ready for a <strong>roaring</strong> Eid celebration as we celebrate Hadi’s 
-            <strong>6th birthday</strong> with dinosaurs, delicious food, and lots of fun! 🎂🦕
-        </p>
-        <p>
-            Come dressed for adventure and enjoy <strong>Eid games, a dinosaur feast, and a special birthday surprise!</strong> 🎉
-        </p>
-
-        <a class="rsvp-button" href="https://forms.gle/sXqc4UnPVuh7WNph8" target="_blank">RSVP Now</a>
-
-        <p class="footer">We can’t wait to celebrate with you! 🌙✨🦕</p>
+    <div class="split-container">
+        <div class="left-half"></div>
+        
+        <div class="rsvp-section">
+            <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
+            <p><strong>When:</strong> April 12, 2025, at 1:00 PM</p>
+            <p><strong>Where:</strong> 22944 Rose Quartz Sq, Brambleton VA 20148</p>
+            <p>Get ready for a <strong>roaring</strong> Eid celebration as we celebrate Hadi’s <strong>6th birthday</strong> with dinosaurs, delicious food, and lots of fun! 🎂🦕</p>
+            <p>Come dressed for adventure and enjoy <strong>Eid games, a dinosaur feast, and a special birthday surprise!</strong> 🎉</p>
+            <a class="rsvp-button" href="https://forms.gle/sXqc4UnPVuh7WNph8" target="_blank">RSVP Now</a>
+        </div>
+        
+        <div class="right-half"></div>
     </div>
 
 </body>
