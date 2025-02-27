@@ -12,25 +12,21 @@
             margin: 0;
             padding: 0;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
             background-color: #f8f8f8;
         }
 
-        /* Images Container */
+        /* Image Container */
         .images-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
             padding: 20px;
         }
 
         .image-box {
             width: 45%;
-            max-width: 300px;
+            max-width: 400px;
             height: auto;
         }
 
@@ -41,7 +37,8 @@
             background: rgba(0, 0, 0, 0.9);
             padding: 40px;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 20px auto;
+            text-align: center;
         }
 
         /* RSVP Button */
@@ -62,7 +59,7 @@
             background-color: #218838;
         }
 
-        /* 📱 Mobile-Friendly Adjustments */
+        /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             .images-container {
                 flex-direction: column;
@@ -70,8 +67,8 @@
             }
 
             .image-box {
-                width: 80%;
-                max-width: 250px;
+                width: 90%;
+                max-width: 300px;
             }
 
             .rsvp-section {
