@@ -19,7 +19,7 @@
             overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Container for the Layout */
+        /* Desktop Layout */
         .split-container {
             display: grid;
             grid-template-columns: 1fr 1.5fr 1fr; /* Left images - Center RSVP - Right images */
@@ -30,7 +30,7 @@
 
         /* Image Sections */
         .left-top, .left-bottom, .right-top, .right-bottom {
-            background-size: cover;
+            background-size: contain; /* Ensures full image is visible */
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -81,22 +81,33 @@
             background-color: #218838;
         }
 
-        /* Responsive Design */
+        /* 📱 Mobile-Friendly Design */
         @media (max-width: 768px) {
             .split-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
+                display: flex;
+                flex-direction: column;
+                height: auto;
             }
 
             .left-top, .left-bottom, .right-top, .right-bottom {
+                width: 100%;
                 height: 25vh;
-                background-size: contain;
+                background-size: contain; /* Ensures full image is visible */
             }
 
             .rsvp-section {
-                width: 90%;
+                width: 100%;
                 height: auto;
                 padding: 20px;
+                order: 2; /* Keeps RSVP section in the middle */
+            }
+
+            .left-top, .left-bottom {
+                order: 1; /* Images appear first on mobile */
+            }
+
+            .right-top, .right-bottom {
+                order: 3; /* Images appear after RSVP on mobile */
             }
         }
     </style>
