@@ -16,20 +16,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'), 
-                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'),
-                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'),
-                        url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
-            background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
-            background-position: top left, top right, bottom left, bottom right;
-            background-repeat: no-repeat;
+            background: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png') no-repeat center center fixed;
+            background-size: cover; /* Ensures full background coverage */
         }
 
         /* Center RSVP Section */
         .rsvp-section {
             width: 80%;
             max-width: 700px;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.85); /* Slight transparency for readability */
             padding: 40px;
             border-radius: 10px;
             text-align: center;
@@ -59,11 +54,6 @@
 
         /* 📱 Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
-            body {
-                background-size: cover;
-                background-position: center;
-            }
-
             .rsvp-section {
                 width: 90%;
                 padding: 20px;
