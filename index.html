@@ -32,16 +32,18 @@
         .left, .right {
             display: flex;
             flex-direction: column;
-            width: 30%; /* Keeps images balanced */
-            min-height: 100%;
+            width: 35%; /* Keeps images balanced on larger screens */
+            height: 100vh;
         }
 
+        /* Ensuring Full Images Display */
         .image-box {
             flex: 1;
-            background-size: covers; /* Ensures full image visibility */
+            background-size: contain; /* Ensures full image visibility */
             background-repeat: no-repeat;
             background-position: center;
-            min-height: 50vh; /* Prevents image cutoff */
+            width: 100%;
+            height: 50%;
         }
 
         /* Assign Your Specific Images */
@@ -63,9 +65,9 @@
 
         /* Center RSVP Section */
         .rsvp-section {
-            width: 40%; /* Slightly bigger than image sections */
+            width: 30%; /* Center section slightly smaller for balance */
             min-height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -102,6 +104,7 @@
                 width: 100%;
                 flex-direction: row;
                 justify-content: center;
+                height: auto;
             }
 
             .image-box {
@@ -111,7 +114,7 @@
             }
 
             .rsvp-section {
-                width: 100%;
+                width: 90%;
                 height: auto;
                 padding: 20px;
             }
@@ -122,8 +125,8 @@
 
     <div class="split-container">
         <div class="left">
-            <div class="image-box"></div> <!-- Top Left -->
-            <div class="image-box"></div> <!-- Bottom Left -->
+            <div class="image-box"></div>
+            <div class="image-box"></div>
         </div>
         
         <div class="rsvp-section">
@@ -136,8 +139,8 @@
         </div>
 
         <div class="right">
-            <div class="image-box"></div> <!-- Top Right -->
-            <div class="image-box"></div> <!-- Bottom Right -->
+            <div class="image-box"></div>
+            <div class="image-box"></div>
         </div>
     </div>
 
