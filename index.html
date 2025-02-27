@@ -19,41 +19,48 @@
             overflow: hidden; /* Prevent scrolling */
         }
 
-        /* Container for Split Layout */
+        /* Container for the Layout */
         .split-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr; /* Left images - Center RSVP - Right images */
+            grid-template-rows: 1fr 1fr; /* Two rows */
             width: 100%;
             height: 100vh;
         }
 
-        /* Left and Right Image Halves */
-        .left-half, .right-half, .rsvp-section {
-            height: 100%;
-            background-size: contain; /* Ensures full image is visible */
+        /* Image Sections */
+        .left-top, .left-bottom, .right-top, .right-bottom {
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            flex: 1; /* Equal flexibility */
         }
 
-        /* Set the same image on both sides */
-        .left-half {
-            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png');
+        .left-top {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'); /* Replace with left-top image */
         }
 
-        .right-half {
-            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png');
+        .left-bottom {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png'); /* Replace with left-bottom image */
+        }
+
+        .right-top {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_celebration.png'); /* Replace with right-top image */
+        }
+
+        .right-bottom {
+            background-image: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party.png'); /* Replace with right-bottom image */
         }
 
         /* Center RSVP Section */
         .rsvp-section {
-            flex: 1.2; /* Slightly bigger than side images */
-            background: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            text-align: center;
+            background: rgba(0, 0, 0, 0.8); /* Black background */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-radius: 10px;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            grid-row: span 2; /* Make it span across both rows */
         }
 
         /* RSVP Button */
@@ -77,13 +84,13 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .split-container {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
 
-            .left-half, .right-half {
-                width: 100%;
-                height: 30vh;
-                background-size: cover;
+            .left-top, .left-bottom, .right-top, .right-bottom {
+                height: 25vh;
+                background-size: contain;
             }
 
             .rsvp-section {
@@ -97,8 +104,7 @@
 <body>
 
     <div class="split-container">
-        <div class="left-half"></div>
-        
+        <div class="left-top"></div>
         <div class="rsvp-section">
             <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
             <p><strong>When:</strong> April 12, 2025, at 1:00 PM</p>
@@ -107,8 +113,9 @@
             <p>Come dressed for adventure and enjoy <strong>Eid games, a dinosaur feast, and a special birthday surprise!</strong> 🎉</p>
             <a class="rsvp-button" href="https://forms.gle/sXqc4UnPVuh7WNph8" target="_blank">RSVP Now</a>
         </div>
-        
-        <div class="right-half"></div>
+        <div class="right-top"></div>
+        <div class="left-bottom"></div>
+        <div class="right-bottom"></div>
     </div>
 
 </body>
