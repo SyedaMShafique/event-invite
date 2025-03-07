@@ -3,35 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadi’s 6th Dinosaur Eid Party! 🦖🌙✨</title>
+    <title>🦖🌙 Hadi’s 6th Dinosaur Eid Party! 🦖🌙</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party_2.png') no-repeat center center fixed;
-            background-size: cover; /* Ensures full background coverage */
+
+       body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    min-height: 100vh;
+    width: 100vw;
+    background: url('https://raw.githubusercontent.com/SyedaMShafique/event-invite/refs/heads/main/dinosaur_eid_birthday_party_2.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Allows scrolling */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+       /* RSVP Section */
+.rsvp-section {
+    width: 85%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10vh auto; /* Provides equal spacing at top and bottom */
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 24px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #FFD700;
         }
 
-        /* Center RSVP Section */
-        .rsvp-section {
-            width: 80%;
-            max-width: 700px;
-            background: rgba(0, 0, 0, 0.85); /* Slight transparency for readability */
-            padding: 40px;
-            border-radius: 10px;
+        /* Timeline Styling */
+        .timeline {
+            margin: 20px auto;
             text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .timeline h3 {
+            margin-bottom: 10px;
+        }
+
+        .timeline p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        /* Piñata Image */
+        .pinata {
+            width: 30px;
+            height: 30px;
         }
 
         /* RSVP Button */
@@ -52,26 +92,83 @@
             background-color: #218838;
         }
 
-        /* 📱 Mobile-Friendly Adjustments */
+        /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             .rsvp-section {
                 width: 90%;
                 padding: 20px;
             }
+            .countdown {
+                font-size: 20px;
+            }
+            .timeline p {
+                font-size: 16px;
+            }
+            .pinata {
+                width: 25px;
+                height: 25px;
+            }
         }
     </style>
 </head>
-<body>
+<body onclick="showRSVP()">
 
     <!-- RSVP Section -->
-    <div class="rsvp-section">
-        <h1>Hadi's 6th Dinosaur Eid Party! 🦖🌙✨</h1>
+    <div class="rsvp-section" id="rsvp">
+        <h1>🌙🦖 Hadi's 6th Dinosaur Eid Party! 🦖🌙</h1>
         <p><strong>When:</strong> April 12, 2025, at 1:00 PM</p>
         <p><strong>Where:</strong> 22944 Rose Quartz Sq, Brambleton VA 20148</p>
         <p>Get ready for a <strong>roaring</strong> Eid celebration as we celebrate Hadi’s <strong>6th birthday</strong> with dinosaurs, delicious food, and lots of fun! 🎂🦕</p>
         <p>Come dressed for adventure and enjoy <strong>Eid games, a dinosaur feast, and a special birthday surprise!</strong> 🎉</p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown" id="countdown"></div>
+        
+        <!-- Event Timeline -->
+        <div class="timeline">
+            <h3>Event Timeline ⏳</h3>
+            <p><strong>1:00 PM:</strong> Party Starts 🎊</p>
+            <p><strong>1:30 PM:</strong> Cake Cutting 🎂</p>
+            <p>
+                <strong>2:00 PM:</strong> Fun Games
+                <img class="pinata" src="https://cdn-icons-png.flaticon.com/512/3437/3437306.png" alt="Piñata">
+            </p>
+        </div>
+
+        <p><strong>RSVP at least 2 weeks before!</strong> Otherwise, we will assume you're not coming. Thank you ✨ </p>
+        
         <a class="rsvp-button" href="https://forms.gle/sXqc4UnPVuh7WNph8" target="_blank">RSVP Now</a>
     </div>
+
+    <script>
+        function showRSVP() {
+            const rsvpBox = document.getElementById('rsvp');
+            rsvpBox.style.display = 'block';
+            setTimeout(() => rsvpBox.style.opacity = '1', 100);
+            document.body.onclick = null; // Prevent multiple triggers
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date("April 12, 2025 13:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerText = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                document.getElementById("countdown").innerText = "The party has started! 🎉";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 
 </body>
 </html>
